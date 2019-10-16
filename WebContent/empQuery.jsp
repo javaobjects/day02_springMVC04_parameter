@@ -42,7 +42,9 @@
 					<td>${emp.dept.dname}</td>
 					<td>
 						<a href="${pageContext.request.contextPath}/emp/getEmpByempIndex.action?empIndex=${status.index}">编辑</a>
+						<a href="${pageContext.request.contextPath}/emp/getEmpByempIndex2.action?empIndex=${status.index}">编辑2</a>
 						<a href="${pageContext.request.contextPath}/emp/deleteEmps.action?empnos=${emp.empno}">删除</a>
+						<a href="${pageContext.request.contextPath}/emp/getSubEmpByempIndex.action?empIndex=${status.index}">查看下属员工</a>
 					</td>
 				</tr>
 			</c:forEach>

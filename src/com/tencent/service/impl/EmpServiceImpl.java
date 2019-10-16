@@ -40,4 +40,5 @@ public class EmpServiceImpl implements IEmpService {
 		Emp emp = empDao.selectEmpByempIndex(empIndex);
 		return emp;
 	}
+
 }

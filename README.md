@@ -1,2 +1,5 @@
-# day02_springMVC04_parameter
-springMVC参数
+# springMVC参数
+
+实现如下效果：
+
+![](WebContent/Images/GIF.gif)

@@ -1,6 +1,7 @@
 package com.tencent.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * 映射Emp表的实体类
@@ -23,12 +24,17 @@ public class Emp {
 	private double comm;
 	/**部门*/
 	private Dept dept;
-
+	/**
+	 * 	管理的下属员工信息 
+	 */
+	public List<Emp> subEmpList;//一对多，一个员工可以管理多个下属
+	
 	/**构造函数*/
 	public Emp() {
 		super();
 	}
-	public Emp(int empno, String ename, String job, int mgr, Date hiredate, double salary, double comm, Dept dept) {
+	public Emp(int empno, String ename, String job, int mgr, Date hiredate, double salary, double comm, Dept dept,
+			List<Emp> subEmpList) {
 		super();
 		this.empno = empno;
 		this.ename = ename;
@@ -38,6 +44,7 @@ public class Emp {
 		this.salary = salary;
 		this.comm = comm;
 		this.dept = dept;
+		this.subEmpList = subEmpList;
 	}
 	/**访问器*/
 	public int getEmpno() {
@@ -89,9 +96,18 @@ public class Emp {
 		this.dept = dept;
 	}
 	
+	public List<Emp> getSubEmpList() {
+		return subEmpList;
+	}
+	public void setSubEmpList(List<Emp> subEmpList) {
+		this.subEmpList = subEmpList;
+	}
 	@Override
 	public String toString() {
 		return "Emp [empno=" + empno + ", ename=" + ename + ", job=" + job + ", mgr=" + mgr + ", hiredate=" + hiredate
 				+ ", salary=" + salary + ", comm=" + comm + ", dept=" + dept + "]";
 	}
+	
+	
+	
 }
