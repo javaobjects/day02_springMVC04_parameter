@@ -200,4 +200,27 @@ public class EmpController {
 		request.getRequestDispatcher("/empQuery.jsp").forward(request,response);
 	}
 	
+	/**
+	 * 
+	 * <p>Title: updateEmp</p>  
+	 * <p>
+	 *	Description: 
+	 *  3. 简单的pojo类型
+	 *  	将表单域的name属性值与pojo对象的属性名称保持大小写一致，即:
+	 *  	<input type="text" name="ename" value="${emp.ename}">中的name属性值ename
+	 *  与public String updateEmp(Emp emp) 方法中的emp对象的setEname
+	 *  后的ename名称保持大小写一致
+	 *  
+	 *  4. 复杂pojo类型:dept.deptno dept.dname
+	 *  
+	 *  
+	 * </p> 
+	 * @param emp
+	 * @return
+	 */
+	@RequestMapping("/updateEmp")
+	public String updateEmp(Emp emp) {
+		System.out.println("修改用户的信息:" + emp);
+		return "success";
+	}
 }
