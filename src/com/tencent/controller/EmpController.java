@@ -1,6 +1,7 @@
 package com.tencent.controller;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -221,6 +222,27 @@ public class EmpController {
 	@RequestMapping("/updateEmp")
 	public String updateEmp(Emp emp) {
 		System.out.println("修改用户的信息:" + emp);
+		return "success";
+	}
+	
+	/**
+	 * 
+	 * <p>Title: deleteEmps</p>  
+	 * <p>
+	 *	Description: 
+	 *  6.数组类型
+	 *  	1. 实际参数的名称与形式参数名称保持大小写一致
+	 *  	<input type="checkbox" name="empnos" value="${emp.empno}">中的name属性值empnos
+	 *  与
+	 *  public String deleteEmps(Integer[] empnos) 中的empnos保持大小写一致
+	 * </p> 
+	 * @param empnos
+	 * @return
+	 */
+	@RequestMapping("/deleteEmps")
+	public String deleteEmps(Integer[] empnos) {
+		System.out.println("删除用户的empno:" + Arrays.toString(empnos));
+		
 		return "success";
 	}
 }
