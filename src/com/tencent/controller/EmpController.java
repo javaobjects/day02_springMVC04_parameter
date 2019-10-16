@@ -213,7 +213,7 @@ public class EmpController {
 	 *  
 	 *  4. 复杂pojo类型:dept.deptno dept.dname
 	 *  
-	 *  
+	 *  5. 自定义参数：需要自定义转换器
 	 * </p> 
 	 * @param emp
 	 * @return

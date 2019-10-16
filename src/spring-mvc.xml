@@ -14,7 +14,7 @@
 	                       http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 
 	<!-- 1.开启注解方式的处理器映射器、处理器适配器 -->
-	<mvc:annotation-driven/>
+	<mvc:annotation-driven conversion-service="conversionService"/>
 
 	<!-- 2.处理器 -->
 	<context:component-scan base-package="com.tencent"></context:component-scan>
@@ -25,5 +25,14 @@
 			<property name="prefix" value="/"></property>
 			<!-- 后缀 -->
 			<property name="suffix" value=".jsp"></property>
-	</bean>                   
+	</bean>    
+	<!-- 4. 自定义参数配置 -->
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<!-- 自定义转换器 -->
+		<property name="converters">
+			<set>
+				<bean class="com.tencent.converter.CustomerDateConverter"></bean>
+			</set>
+		</property>
+	</bean>               
 </beans>
